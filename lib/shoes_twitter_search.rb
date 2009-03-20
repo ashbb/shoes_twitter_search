@@ -11,7 +11,7 @@ Shoes.app :width => W, :height => H, :title => T do
   
   flow :height => F do
     para "Input: "
-    @input = para('_why Shoes', :weight => 'bold')
+    @input = para('Shoes RubyLearning', :weight => 'bold')
     line 0, F, W, F, :stroke => green, :strokewidth => 5
     @star = image :left => W - 25, :top => 0, :width => 20, :height => 20 do
       star 10, 10, 12, 10, 7, :fill => deepskyblue, :stroke => orange
@@ -26,7 +26,7 @@ Shoes.app :width => W, :height => H, :title => T do
         @f.append do
           flow do
             background i%2 == 0 ? lavender : cornsilk
-            image t.avatar, :width => 25, :height => 25, :left => 0, :top => 0
+            image(t.avatar, :width => 25, :height => 25, :left => 0, :top => 0) rescue error $!
             eval('para "     #{t.screen_name} : "' + 
               mk_links(t.text) + ', "#{t.created_at}"' +
               ', :font => "MS UI Gothic", :size => "x-small", :width => W - 20')
