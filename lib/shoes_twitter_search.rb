@@ -8,6 +8,8 @@ T = 'Shoes Twitter Search v0.1'
 Shoes.app :width => W, :height => H, :title => T do
   extend TwitterSearch
   terms = ''
+  style Link, :underline => nil
+  style LinkHover, :underline => nil
   
   flow :height => F do
     para "Input: "
@@ -27,9 +29,11 @@ Shoes.app :width => W, :height => H, :title => T do
           flow do
             background i%2 == 0 ? lavender : cornsilk
             image(t.avatar, :width => 25, :height => 25, :left => 0, :top => 0) rescue error $!
-            eval('para "     #{t.screen_name} : "' + 
-              mk_links(t.text) + ', "#{t.created_at}"' +
-              ', :font => "MS UI Gothic", :size => "x-small", :width => W - 20')
+            cmd = 'para "     "' + mk_avatar_link(t.screen_name) +
+                       mk_links(t.text) + ', "#{t.created_at}"' +
+                      ', :font => "MS UI Gothic", :size => "x-small", :width => W - 20'
+            cmd = cmd.gsub(', ,', ',')
+            eval cmd
           end
         end
       end
