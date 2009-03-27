@@ -18,6 +18,8 @@ You can delete them with `backspace` key and reinput new keywords.
 
 If you click on an upper right deepskyblue star, Shoes Twitter Search searches them immediately. If you do nothing, it'll search every 60 seconds.
 
+If you click on each word, the result of google translation (English to Japanese) will appear on the small popup area.
+
 
 Snapshot
 --------
@@ -26,6 +28,7 @@ Snapshot
 
 Change log
 ----------
+Mar 27th, 2009: Released v0.2. Added the google-translate function. <br>
 Mar 26th, 2009: Rewroted link function from scratch. <br>
 Mar 24th, 2009: Added links to twitters and replaced snapshot pic. <br>
 Mar 20th, 2009: Added a `rescue` condition for avatar downloading and wrote this README. <br>
@@ -36,7 +39,7 @@ To do list
 ----------
 - discover the cause of abort
 - add advanced search conditions
-- translate the word (Mouseover Dictionary) like [this](http://github.com/ashbb/shoes_translator/tree/master)
+- translate the word (Mouseover Dictionary) like [this](http://github.com/ashbb/shoes_translator/tree/master)... done!
 - fetch the next page of the search result
 
 

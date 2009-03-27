@@ -1,7 +1,6 @@
 # mk_elements.rb
 
 module TwitterSearch
-
   def mk_text word, x, y
     len = 8 * word.length
     (x = 0; y += 20) if (x + len) > width - 16
@@ -12,13 +11,14 @@ module TwitterSearch
     x += (len + 8)
               
     r.click do
+      result = search(word)
+      h = 8 * result.length / 160 + 1
       b, l, t = self.mouse
-      @msg = flow :left => l, :top => t, :width => 100, :height => 30 do
+      @msg = flow :left => l, :top => t, :width => 160, :height => 20 * h do
         nostroke
-        rect 0, 0, 100, 30, :fill => rgb(255, 99, 71, 0.5), :curve => 5
-        para word, :font => "MS UI Gothic", :size => 10, :weight => 'bold'
+        rect 0, 0, 160, 20 * h, :fill => rgb(255, 99, 71, 0.5), :curve => 5
+        para result, :font => "MS UI Gothic", :size => 10, :weight => 'bold'
       end
-      @msg.style :width => len
     end
     r.leave{@msg.remove if @msg}
     
@@ -49,5 +49,3 @@ module TwitterSearch
     return x, y
   end
 end
-
-

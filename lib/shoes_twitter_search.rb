@@ -1,9 +1,10 @@
 # shoes_twitter_search.rb
 require 'twitter_search'
 require 'mk_elements.rb'
+require 'google_translate'
 
 W, H, F = 300, 400, 25
-T = 'Shoes Twitter Search v0.1'
+T = 'Shoes Twitter Search v0.2'
 
 Shoes.app :width => W, :height => H, :title => T do
   extend TwitterSearch
@@ -13,7 +14,7 @@ Shoes.app :width => W, :height => H, :title => T do
   
   flow :height => F do
     para "Input: "
-    @input = para('artandcode', :weight => 'bold')
+    @input = para('Shoes RubyLearning', :weight => 'bold')
     line 0, F, W, F, :stroke => green, :strokewidth => 5
     @star = image :left => W - 25, :top => 0, :width => 20, :height => 20 do
       star 10, 10, 12, 10, 7, :fill => deepskyblue , :stroke => orange
