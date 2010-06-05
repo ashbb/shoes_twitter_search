@@ -28,10 +28,11 @@ Snapshot
 
 Change log
 ----------
-Mar 27th, 2009: Released v0.2. Added the google-translate function. <br>
-Mar 26th, 2009: Rewroted link function from scratch. <br>
-Mar 24th, 2009: Added links to twitters and replaced snapshot pic. <br>
-Mar 20th, 2009: Added a `rescue` condition for avatar downloading and wrote this README. <br>
+Jun 05th, 2010: Released v0.2a. Edited a little bit by twitter_search output format change.    
+Mar 27th, 2009: Released v0.2. Added the google-translate function.    
+Mar 26th, 2009: Rewroted link function from scratch.    
+Mar 24th, 2009: Added links to twitters and replaced snapshot pic.    
+Mar 20th, 2009: Added a `rescue` condition for avatar downloading and wrote this README.    
 Mar 19st, 2009: First release v0.1
 
 

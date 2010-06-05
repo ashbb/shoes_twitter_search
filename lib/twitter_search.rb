@@ -16,12 +16,12 @@ module TwitterSearch
       end
     
       (doc/"div.avatar").each_with_index do |e, i|
-        vals = /src=\"(.*)\" alt=/.match(e.at("img['src']").to_s)
-        twitters[i].avatar =  vals.to_a[1]
+        /src=\"(.*)\"/.match(e.at("img['src']").to_s)
+        twitters[i].avatar =  $1
       end
     
       (doc/"div.info").each_with_index do |e, i|
-        twitters[i].created_at =  e.inner_text.to_a[1].strip.chop
+        twitters[i].created_at =  e.inner_text.strip.split("\n").first
       end
 
       yield twitters

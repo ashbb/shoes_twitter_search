@@ -4,7 +4,7 @@ require 'mk_elements.rb'
 require 'google_translate'
 
 W, H, F = 300, 400, 25
-T = 'Shoes Twitter Search v0.2'
+T = 'Shoes Twitter Search v0.2a'
 
 Shoes.app :width => W, :height => H, :title => T do
   extend TwitterSearch
